@@ -1,4 +1,3 @@
-// src/context/SalesContext.jsx
 import React, { createContext, useState } from "react";
 
 export const SalesContext = createContext();

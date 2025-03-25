@@ -1,4 +1,4 @@
-// src/components/SalesTable.jsx
+
 import React, { useContext } from "react";
 import { SalesContext } from "../context/SalesContext";
 

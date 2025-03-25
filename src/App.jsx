@@ -1,4 +1,4 @@
-// src/App.jsx
+
 import React, { useState } from "react";
 import SalesForm from "./components/SalesForm";
 import SalesTable from "./components/SalesTable";
