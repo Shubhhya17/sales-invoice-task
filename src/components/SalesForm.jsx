@@ -3,7 +3,13 @@ import { SalesContext } from "../context/SalesContext";
 
 function SalesForm() {
   const { addSale } = useContext(SalesContext);
-  const [form, setForm] = useState({ customer: "", product: "", quantity: "", price: "", category: "" });
+  const [form, setForm] = useState({
+    customer: "",
+    product: "",
+    quantity: "",
+    price: "",
+    category: "",
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,14 +26,21 @@ function SalesForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2 p-4 border rounded w-96 text-center">
-      <input type="text" name="customer" value={form.customer} onChange={handleChange} placeholder="Customer Name" required className="border p-2 w-full" />
-      <input type="text" name="product" value={form.product} onChange={handleChange} placeholder="Product" required className="border p-2 w-full" />
-      <input type="number" name="quantity" value={form.quantity} onChange={handleChange} placeholder="Quantity" required className="border p-2 w-full" />
-      <input type="number" name="price" value={form.price} onChange={handleChange} placeholder="Price" required className="border p-2 w-full" />
-      <input type="text" name="category" value={form.category} onChange={handleChange} placeholder="Category" required className="border p-2 w-full" />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2">Add Sale</button>
-    </form>
+    <div className="flex justify-center items-center min-h-screen bg-gray-200">
+      <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-xl p-6 w-96 text-center">
+        <h2 className="text-2xl font-bold mb-4 text-gray-700">Add New Sale</h2>
+        <input type="text" name="customer" value={form.customer} onChange={handleChange} placeholder="Customer Name" className="border p-3 w-full mb-2 rounded-md" />
+        <input type="text" name="product" value={form.product} onChange={handleChange} placeholder="Product" className="border p-3 w-full mb-2 rounded-md" />
+        <input type="number" name="quantity" value={form.quantity} onChange={handleChange} placeholder="Quantity" className="border p-3 w-full mb-2 rounded-md" />
+        <input type="number" name="price" value={form.price} onChange={handleChange} placeholder="Price" className="border p-3 w-full mb-2 rounded-md" />
+        <input type="text" name="category" value={form.category} onChange={handleChange} placeholder="Category" className="border p-3 w-full mb-2 rounded-md" />
+        <div className="mt-4">
+          <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+            Add Sale
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
